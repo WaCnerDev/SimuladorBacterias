@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MVC.FXMLDocumentController">
+   <children>
+      <VBox prefHeight="600.0" prefWidth="350.0" style="-fx-background-color: #3d4757;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="200.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Imagenes/microscope-icon.png" />
+               </image>
+               <VBox.margin>
+                  <Insets bottom="30.0" left="97.0" top="50.0" />
+               </VBox.margin>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Temperatura" textAlignment="CENTER">
+               <font>
+                  <Font name="Georgia" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="85.0" top="10.0" />
+               </VBox.margin>
+            </Text>
+            <HBox alignment="CENTER" prefHeight="20.0" prefWidth="220.0">
+               <children>
+                  <Slider fx:id="sliderTemp" blockIncrement="1.0" max="75.0" minorTickCount="5" onMouseClicked="#cambioTempClicked" prefHeight="25.0" prefWidth="256.0" showTickLabels="true" showTickMarks="true">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Slider>
+                  <Text fx:id="infotemp" strokeType="OUTSIDE" strokeWidth="0.0">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Georgia" size="20.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <RadioButton fx:id="rb_CO2" mnemonicParsing="false" onAction="#ActivarCo2" style="-fx-text-fill: #000000;" text="Co2">
+               <font>
+                  <Font name="Georgia" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" />
+               </VBox.margin>
+            </RadioButton>
+            <RadioButton fx:id="rb_Humedad" mnemonicParsing="false" onAction="#ActivarHumedad" style="-fx-text-fill: #000000;" text="Humedad">
+               <font>
+                  <Font name="Georgia" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" />
+               </VBox.margin>
+            </RadioButton>
+            <RadioButton fx:id="rb_O2" mnemonicParsing="false" onAction="#ActivarO2" style="-fx-text-fill: #000000;" text="O2">
+               <font>
+                  <Font name="Georgia" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" />
+               </VBox.margin>
+            </RadioButton>
+            <VBox alignment="CENTER" maxWidth="-Infinity" prefWidth="334.0">
+               <children>
+                  <ComboBox fx:id="cb_listbacteria" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="330.0" promptText="Bacterias" style="-fx-background-radius: 10;">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </ComboBox>
+                  <Button fx:id="buttonAdd" mnemonicParsing="false" onAction="#agregarbacteria" onMouseClicked="#enviarInfo" prefHeight="40.0" style="-fx-background-radius: 10;" text="Agregar">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Georgia" size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets left="10.0" right="10.0" />
+         </padding>
+      </VBox>
+      <Pane fx:id="Paneimage" layoutY="1.0" prefHeight="600.0" prefWidth="650.0" style="-fx-border-width: 10; -fx-border-color: #3d4757;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="350.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+   </children>
+</AnchorPane>
